@@ -1,0 +1,598 @@
+/* G L O B A L */
+
+*{ /* */
+  margin: 0px; /* */
+  padding: 0px; /* */
+  box-sizing: border-box; /* */
+  font-family: Arial, Helvetica, sans-serif; /* */
+  scroll-behavior: smooth; /* */
+}
+
+p{ /* */
+  font-weight: 300; /* */
+  color: #1111; /* */
+}
+
+.logo{font-variant: small-caps;}
+.logo .localite{
+  color: rgba(242, 156, 84, 1);
+  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+body {
+    position: relative; /* Assure que les éléments positionnés à l'intérieur sont positionnés par rapport à ce conteneur */
+    background-image: url("../images/asm_01.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir l'ensemble du conteneur */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    min-height: 100vh;
+}
+
+body::after { /* FILTRE BACKGROUND */
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.8);
+  z-index: -1000;
+}
+
+/* H E A D E R */
+
+header{ /* */
+  position: fixed;
+  height: auto;
+  width: 100%;
+  top: 0;
+  padding: 15px;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 1);
+}
+
+header .logo{
+  align-items: center;
+  display: flex;
+}
+
+.logo img{position: center;}
+
+header .logo .nom a{
+  text-decoration-line: none; /* style de soulignement */
+  font-size: 15px; /* taille de police */
+  font-weight: bold; /* épaisseur */
+  color: rgb(38, 187, 255);  /* couleur du texte */
+  display: block;
+  text-shadow: 1px 1px 1px rgba(21, 57, 157, 1);
+}
+
+header .logo .embleme{
+  margin-right: 5px;
+}
+
+header nav{
+  display: flex;
+  align-items: center;
+}
+
+header nav ul{list-style-type: none;}
+
+
+nav ul li{
+  background-color: rgba(20, 20, 20, 1);
+  display: inline;
+  padding: 10px;
+  margin: 5px;
+  margin-right: 15px;
+  border: 1px solid rgba(150, 150, 150, 1);
+  border-radius: 10px;
+}
+
+nav ul li:last-child{margin-right: 0px;}
+
+nav ul li a{
+  color: rgba(150, 150, 150, 1);
+  text-decoration-line: none;
+  /* text-transform: uppercase; */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover{
+  color: rgb(38, 187, 255);
+}
+
+/* F O O T E R */
+
+footer{
+  height: auto; /* hauteur */
+  width: 100%; /* largeur */
+  color: white; /* couleur du texte */
+  margin-bottom: 0;
+  background-color: black;
+  position: relative; /* paramétre du positionnement */
+  padding: 5vh; /* marge interieure */
+  padding-bottom: 0px;
+  margin-top: 5vh; /* marge interieure */
+  bottom: 0;
+}
+
+.Nous-PiedDePage,
+.Monde-PiedDePage,
+.Services-PiedDePage{
+  text-align: center; /* Alignement horizontal du contenu du footer */
+  display: flex; /* */
+}
+
+/* Nous-PiedDePage */
+
+.Nous-PiedDePage div{
+  padding: 5vh; /* */
+  margin: 1vh; /* */
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.Nous-PiedDePage .contacts span a{
+  color: white; /* A réappliquer car annulé du fait de <a href="#"></a> */
+  text-decoration-line: none; /* style de soulignement */
+  display: block; /* en block */
+  margin-bottom: 1vh; /* marge extérieure du bas */
+}
+
+.Nous-PiedDePage .contacter{
+  text-decoration-line: underline; /* style de soulignement */
+  text-decoration-color: white;
+}
+
+.Nous-PiedDePage .sites a{
+  color: white; /* A réappliquer car annulé du fait de <a href="#"></a> */
+  text-decoration-line: none; /* style de soulignement */
+  display: inline; /* en ligne */
+}
+
+.Nous-PiedDePage .adresse span{
+  text-align: left;
+  display: block; /* en block */
+  margin-bottom: 1vh; /* marge extérieure du bas */
+}
+
+.Nous-PiedDePage .logo,
+.Nous-PiedDePage .contacts,
+.Nous-PiedDePage .contacter,
+.Nous-PiedDePage .sites,
+.Nous-PiedDePage .adresse { /* répartission des divisions dans le pied de page */
+  margin: 0 auto; /* Centrage horizontal des éléments block */
+  max-width: fit-content; /* Ajustement de la largeur maximale au contenu */
+}
+
+/* Mentions-PiedDePage */
+
+.Mentions-PiedDePage div{
+  background-color: black;  /* coleur fond d'écran */
+  color: white; /* couleur police */
+  text-align: center; /* centrer le texte */
+  display: inline; /* en ligne */
+}
+
+.Mentions-PiedDePage .mentions{
+  text-align: left; /* texte à gauche */
+  font-variant: small-caps; /* Petites majuscules */
+  color: #806D5A; /* couleur du texte */
+  font-size: 12px; /* taille de police */
+}
+
+.Mentions-PiedDePage .GoToTop{
+  text-align: right; /* texte à droite */
+  font-variant: small-caps; /* Petites majuscules */
+  float: right;
+  color: #806D5A; /* couleur du texte */
+  font-size: 12px; /* taille de police */
+}
+
+.Mentions-PiedDePage .mentions,
+.Mentions-PiedDePage .GoToTop{
+    margin: 0 auto; /* Centrage horizontal des éléments block */
+    max-width: fit-content; /* Ajustement de la largeur maximale au contenu */
+}
+
+/* B A N D E A U */
+
+.panel-bandeau{
+  display: flex;
+  width: 50%;
+  height: 170px;
+  overflow: hidden;
+  /* background-color: rgb(255, 155, 155); */
+  margin-top: 90px;
+  align-items: center;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.bandeau{
+  height: auto;
+  display: flex;
+  position: right;
+  /* background-color: rgb(255, 255, 0); */
+  align-items: center;
+  animation: defilement 60s linear infinite;
+  animation-delay: 10s;
+  margin-left: 5px;
+}
+
+@keyframes defilement {
+  0% {transform: translateX(0%);}
+  10% {transform: translateX(-20%);}
+  15% {transform: translateX(-20%);}
+  20% {transform: translateX(-40%);}
+  25% {transform: translateX(-40%);}
+  30% {transform: translateX(-60%);}
+  35% {transform: translateX(-60%);}
+  40% {transform: translateX(-80%);}
+  45% {transform: translateX(-80%);}
+  50% {transform: translateX(-100%);}
+  55% {transform: translateX(-100%);}
+  60% {transform: translateX(-80%);}
+  65% {transform: translateX(-80%);}
+  70% {transform: translateX(-60%);}
+  75% {transform: translateX(-60%);}
+  80% {transform: translateX(-40%);}
+  85% {transform: translateX(-40%);}
+  90% {transform: translateX(-20%);}
+  95% {transform: translateX(-20%);}
+  100% {transform: translateX(0%);}
+}
+
+.frame-bandeau{
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 10px;
+  background-color: rgb(150, 150, 150);
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.frame-bandeau img{
+  max-width: 200px;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease-in-out; /* Ajouter une transition fluide */
+}
+
+.frame-bandeau:hover img{transform: scale(1.1);}
+
+.frame-bandeau .titre{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(20, 20, 20, 0.5); /* Fond noir transparent à 50% */
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 0px 0px 10px 10px;
+  font-size: 16px;
+  text-align: left;
+  display: block;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+
+.frame-bandeau .titre .sous-titre{
+  color: rgb(150, 150, 150);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.frame-bandeau .tag{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: auto;
+  color: white;
+  background-color: rgba(20, 20, 20, 0.7); /* Fond noir transparent à 50% */
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 11px;
+  text-align:center;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+/* S E C T I O N */
+
+section{
+  height: auto; /* hauteur automatique du cadre */
+  align-items: center; /* Aligner verticalement les éléments au centre */
+  justify-content: space-between; /* Espace égal entre les éléments */
+  margin: 0 auto; /* Centrage horizontal des éléments block */
+  box-sizing: border-box; /* Inclure les marges intérieures dans la taille totale */
+
+  /* border: 0.1vh solid #EFEFEF; /* style de bordure du cadre */
+}
+
+/* B I E N V E N U E */
+
+.panel-Bienvenue{
+  text-align: left; /* Alignement horizontal du contenu du footer */
+  display: flex; /* */
+  height: 150px;
+  border: none;
+  top: 10px;
+  width: 50%;
+  margin-left: 50%;
+  background-color: rgba(20, 20, 20, 1);
+  position: absolute;
+}
+
+.couverture,
+.presentation{
+    position: absolute; /* Position absolue pour superposer les divs */
+    top: 0; /* Positionner les divs au sommet du container */
+}
+
+.presentation{
+  color: white;
+  width: 100%;
+  height: 140px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 30px;
+  /* background-color: rgba(0, 155, 255, 1); */
+  overflow-y: scroll;
+}
+
+.presentation h1{padding-left: 1vh;}
+
+.presentation .description{
+  text-align: justify; /* Alignement justifié du contenu du footer */
+  color: white;
+  padding: 1vh;
+  padding-top: 0;
+  height: auto;
+  font-size: 20px;
+  display: block;
+}
+
+
+.panel-Accueil{
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  color: white;
+  /* background-color: rgba(100, 100, 0, 1); */
+  overflow-y: auto;
+}
+
+.panel-Accueil .programme .titre,
+.panel-Accueil .communique .titre{
+  text-align: center;
+}
+
+/* P R O G R A M M E */
+
+.programme{
+  /* background-color: rgba(20, 20, 20, 1); */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin: 5px;
+  width: 50%;
+}
+
+.programme .titre{
+  /* background-color: rgba(150, 100, 50, 1); */
+  margin: 5px;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 0px rgba(150, 150, 150, 1);
+}
+
+.programme .activite{
+  background-color: rgba(20, 20, 20, 0.8);
+  display: block;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(150, 150, 150);
+  padding: 10px;
+  text-transform: uppercase
+}
+
+.programme iframe{
+  margin-left: auto; /* Pour centrer l'iframe */
+  margin-right: auto; /* Pour centrer l'iframe */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: inset;
+  border-width: 5px;
+  border-color: rgb(255, 255, 255);
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+
+.activite .session{
+  /* background-color: rgba(20, 20, 20, 1); */
+  justify-content: space-between;
+  display: flex;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(150, 150, 150);
+}
+
+.activite .adresse{
+  margin-top: 30px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.session .jour{
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.session .creneau{
+  text-align: right;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.communique{
+  /* background-color: rgba(20, 20, 20, 1); */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  margin: 5px;
+  overflow-y: auto;
+  width: 50%;
+}
+
+.communique .titre{
+  /* background-color: rgba(150, 10, 155, 1); */
+  margin: 5px;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 0px rgba(150, 150, 150, 1);
+}
+
+.communique .jeune,
+.communique .deces,
+.communique .mariage,
+.communique .voyage,
+.communique .visite,
+.communique .salutations{
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(150, 150, 150);
+  background-color: rgba(20, 20, 20, 0.8);
+}
+
+.communique .jeune .objet,
+.communique .deces .objet,
+.communique .mariage .objet,
+.communique .voyage.objet,
+.communique .visite .objet,
+.communique .salutations .objet{
+  font-weight: bold;
+}
+
+.communique .jeune .objet{background-color: #ED0000;}
+.communique .deces .objet{background-color: #000000;}
+.communique .mariage .objet{background-color: #C72C48;}
+.communique .voyage .objet{background-color: #318CE7;}
+.communique .visite .objet{background-color: #18391E;}
+.communique .salutations .objet{background-color: #CC5500;}
+
+.programme div,
+.communique div{
+  /* background-color: rgba(150, 100, 155, 1); */
+  margin: 5px;
+}
+
+/* A L B U M */
+
+.panel-Album{
+  color: rgb(255,255,255)
+  display: block; /* */
+  width: 100%; /* */
+  box-sizing: border-box; /* Inclure les marges intérieures dans la taille totale */
+  background-color: rgba(36,36,36,0.7);
+  height: auto;
+
+}
+
+.panel-row{
+  text-align: center; /* Alignement horizontal du contenu du footer */
+  display: flex; /* */
+  margin: 0 auto; /* Centrage horizontal des éléments block */
+  justify-content: center; /* Centrer le contenu horizontalement */
+}
+
+.panel-column{
+  display: block; /* */
+  flex: 1; /* Distribuer l'espace équitablement entre les éléments */
+  margin: 0 5px; /* Ajouter une marge entre les cadres */
+  /* background-color: rgba(36,36,36,0.7); */
+}
+
+.story-column{
+  color: rgb(255,255,255);
+  display: block;
+  margin: 0 0; /* Ajouter une marge entre les cadres */
+  background-color: rgba(155,155,155,0.7);
+  width: 10%;
+  overflow-y: auto;
+  height: 79vh;
+}
+
+.story-column img{
+  margin: 0 0;
+  padding: 0 0;
+  background-color: rgba(60,155,0,1);
+  height: 100px;
+  border-radius: 10px;
+}
+.story-column figcaption{
+  margin-bottom: 1vh;
+  background-color: rgba(60,155,0,1);
+}
+
+.cadre2,
+.cadre{
+  color: rgb(255,255,255);
+  flex: 1; /* Distribuer l'espace équitablement entre les éléments */
+  margin: 0 0.5vh; /* Ajouter une marge entre les cadres */
+  background-color: rgba(36,36,36,1);
+  overflow-y: hidden;
+  margin-bottom: 1vh;
+  padding-top: 0.5vh;
+}
+
+.cadre{height: 25vh;overflow: visible;}
+.cadre2{height: 60vh;}
+
+.cadre-img{
+  margin: auto 0;
+  height: 20vh;
+  width: auto; /* Ajuster la largeur selon vos besoins */
+  overflow: hidden; /* Pour cacher le dépassement de l'image agrandie */
+  color: rgb(255,255,255);
+  margin-top: 1vh;
+  margin-bottom: 0.5vh;
+}
+
+.cadre-img img{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  border-radius: 10px;
+  /* transition: transform 0.3s ease-in-out; */
+}
+
+.cadre-img img:hover{
+  transform: scale(1.1); /* Agrandir le conteneur au survol */
+  transition: transform 0.4s ease-in-out; /* Ajouter une transition fluide */
+}
+
+.cadre figcaption:hover{
+  transform: scale(1.1); /* Agrandir le conteneur au survol */
+  color: rgb(255,155,0);
+  transition: transform 0.4s ease-in-out; /* Ajouter une transition fluide */
+}
